@@ -1,4 +1,6 @@
-function addTask() {
+function addTask(event) {
+    event.preventDefault(); // empêche le rechargement
+
     const input = document.getElementById("taskInput");
     const taskList = document.getElementById("taskList");
 
@@ -13,4 +15,5 @@ function addTask() {
     taskList.appendChild(li);
     input.value = "";
 }
+
 
