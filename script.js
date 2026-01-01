@@ -9,3 +9,4 @@ function filterTasks(type) {
       task.style.display = task.classList.contains("done") ? "flex" : "none";
   });
 }
+document.getElementById("taskList").innerHTML = "<li>TEST</li>";
