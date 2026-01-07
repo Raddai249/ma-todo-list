@@ -1,4 +1,8 @@
 function addTask() {
+  alert("Le bouton Ajouter fonctionne !");
+}
+
+function addTask() {
   const input = document.getElementById("taskInput");
   const taskText = input.value.trim();
 
