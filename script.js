@@ -13,9 +13,26 @@ addBtn.addEventListener("click", () => {
     return;
   }
 
+  // créer li
   const li = document.createElement("li");
-  li.textContent = taskText;
 
+  // texte de la tâche
+  const span = document.createElement("span");
+  span.textContent = taskText;
+
+  // bouton supprimer
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "❌";
+  deleteBtn.style.marginLeft = "10px";
+
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+    count--;
+    counter.textContent = count + " tâche(s)";
+  });
+
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
   taskList.appendChild(li);
 
   input.value = "";
