@@ -39,3 +39,25 @@ addBtn.addEventListener("click", () => {
   count++;
   counter.textContent = count + " tâche(s)";
 });
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+// Activer / désactiver le mode sombre
+darkModeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  // Sauvegarde du thème
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    darkModeBtn.textContent = "☀️ Mode clair";
+  } else {
+    localStorage.setItem("theme", "light");
+    darkModeBtn.textContent = "🌙 Mode sombre";
+  }
+});
+
+// Charger le thème au rechargement
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  darkModeBtn.textContent = "☀️ Mode clair";
+}
+
